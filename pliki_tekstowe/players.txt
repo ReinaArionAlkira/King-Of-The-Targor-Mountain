@@ -1,0 +1,4 @@
+Imie: 
+Plec:
+Poziom: 
+Sila: 

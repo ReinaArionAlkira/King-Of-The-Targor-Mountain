@@ -1,0 +1,7 @@
+*********************************************************************
+ Gra zostala stworzona jako projekt zaliczeniowy z programowania I. 
+ Gra tylko na PC z systemem Windows. 
+ Tworca: Renata Wesolowska
+ Inspiracja: League of legends, Munchkin 
+ Data ostatniej aktualizacji: 25.01.2021
+*********************************************************************

@@ -1,0 +1,12 @@
+Pirat: 
+	obra¿enia do wodnego potwora: +2
+Pogromca:
+	obra¿enia przy 1 potworze: +2
+	obra¿enia przy wiêkszej iloœci potworów: -3
+Obronca:
+	obra¿enia przy wiêkszej iloœci potworów: +3
+	ucieczka: -1
+Targonianin:
+	ucieczka: +2
+Kolekcjoner:
+	+1 du¿a rzecz do noszenia

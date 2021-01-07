@@ -1,0 +1,18 @@
+﻿  funkcje.cpp
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,17): error C3646: "inventory": nieznany specyfikator przesłonięcia
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,17): error C2143: błąd składniowy: brakuje „,” przed „[”
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,21): error C2143: błąd składniowy: brakuje „)” przed „;”
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,21): error C2238: nieoczekiwany(e) token(y) poprzedzający(e) ";"
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(14,16): error C3646: "clas": nieznany specyfikator przesłonięcia
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(14,16): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\funkcje.cpp(9,15): error C2039: „clas”: nie jest składową elementu „Gracz”
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(9): message : zobacz deklarację „Gracz”
+  main.cpp
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,17): error C3646: "inventory": nieznany specyfikator przesłonięcia
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,17): error C2143: błąd składniowy: brakuje „,” przed „[”
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,21): error C2143: błąd składniowy: brakuje „)” przed „;”
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(13,21): error C2238: nieoczekiwany(e) token(y) poprzedzający(e) ";"
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(14,16): error C3646: "clas": nieznany specyfikator przesłonięcia
+C:\Users\A49\source\repos\Gra - projekt na zaliczenie przedmiotu\head.h(14,16): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+  ze statków.cpp
+  Generowanie kodu...

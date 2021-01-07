@@ -1,0 +1,4 @@
+C:\Users\ReinaArionAlkira\source\repos\Gra - projekt na zaliczenie przedmiotu\x64\Debug\Gra - projekt na zaliczenie przedmiotu.exe
+C:\Users\ReinaArionAlkira\source\repos\Gra - projekt na zaliczenie przedmiotu\x64\Debug\Gra - projekt na zaliczenie przedmiotu.pdb
+C:\Users\ReinaArionAlkira\Source\Repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\x64\Debug\Gra - projekt na zaliczenie przedmiotu.exe
+C:\Users\ReinaArionAlkira\Source\Repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\x64\Debug\Gra - projekt na zaliczenie przedmiotu.pdb

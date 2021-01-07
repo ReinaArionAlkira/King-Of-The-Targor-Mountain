@@ -1,0 +1,42 @@
+ 
+=========================================================================
+= Gra nosi tytul King of the Targon mountain. 				=
+= Polega ona na dotarciu na szczyt gory i zabicie tam potwora. 		=
+= Mapa podzielona jest na 3 okregi i srodek (szczyt). 			=
+=  Aby dostac sie na szczyt musisz przejsc przez kazdy krag.		=
+=  Aby wejsc na wyzszy krag musisz miec odpowiedni poziom		=
+=   i zabic potwora wylosowanego na polu wyzszego kregu 		=
+=  	- Wejscie na 2 krag - wymagany 4 poziom 			=
+= 	- Wejscie na 3 krag - wymagany 6 poziom 			=
+= 	- Wejscie na szczyt - wymagany 9 poziom				=
+=									=
+  Po wejsciu na krag nastepuje walka 					=
+  	- Jesli ja wygrasz, zyskujesz kolejny poziom 			=
+  	- Jesli nie, uciekasz 						=
+  	- Jesli ci sie nie uda uciec lub nie uciekasz 			=
+	nastepuje Twoj "Marny koniec"					=
+=									=
+= Zaczynasz otrzymujac 4 skarby i 4 "karty" wydarzenia. 		=
+=  Do tego wybierasz plec swojej postaci (kobieta/mezczyzna)		=
+= 	Uwaga! Plec moze ulec zmianie podczas gry.			=
+=									=
+= Jest kilka mozliwosci zdobycia poziomu:  				=
+= 	- Kupic za 1000 monet 						=
+= 	- Zabic potwora 						=
+=	 - Zdobyc i uzyc karty "zdobywasz poziom"			=
+=									=
+= Po wejsciu na kazde pole nastepuje losowanie wydarzenia. 		=
+=	Moze sie trafic: 						=
+= 	- Potwor (przystepujesz do walki) 				=
+= 	- Klatwa (otrzymujesz jej efekt) 				=
+= 	- Klasa lub rasa (mozesz zamienic z obecna lub odrzucic)	=
+= W skarbach moze sie znalezc:  					=
+=  	- Karty pomocnicze						=
+=  	- Element ekwipunku(mozesz zalozyc lub schowac do plecaka) 	=
+=  	- Rupiec (mozesz sprzedac lub wsadzic do plecaka)		=
+= Po wydarzeniu mozesz zarzadzac ekwipunkiem 				=
+=  np. zagrac na siebie potwora czy uzyc na kogos klatwe. 		=
+= Na koniec tury musisz miec maksymalnie 5 rzeczy w plecaku. 		=
+=  Jesli masz wiecej, musisz cos uzyc lub odrzucic.			=
+=									=
+=========================================================================

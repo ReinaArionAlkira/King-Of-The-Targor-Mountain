@@ -1,0 +1,9 @@
+==========================
+= Witaj w grze Rouglike! =
+=			 =
+= Wybierz jedna z opcji: =
+= 1. Rozpocznij gre.	 =
+= 2. Informacje o grze.	 =
+= 3. Na czym polega gra? =
+= 4. Wyjscie.		 =
+==========================
