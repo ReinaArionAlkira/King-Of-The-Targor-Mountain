@@ -1,18 +1,14 @@
 #pragma once
-#include <iostream>
 #include <windows.h>
-#include <string>
 #include <fstream>
-#include <iomanip> 
-
-using namespace std;
+#include "Player.h"
 
 class Game {
 	
 private:
 	//variables
 	int max_lvl;
-	char command;
+	string command;
 	bool play;
 public:
 	Game();

@@ -3,6 +3,7 @@ Player::Player() {
 
 	this->nickname = " ";
 	this->sex = " ";
+	this->cClass = " ";
 	this->lvl = 0;
 	this->strength = 0;
 	this->xPos = 0;
@@ -11,10 +12,11 @@ Player::Player() {
 Player::~Player() {
 
 }
-void Player::initialize(const string name, string gender) {
+void Player::initialize(const string name, string gender, string clas) {
 
 	this->nickname = name;
 	this->sex = gender;
+	this->cClass = clas;
 	this->lvl = 1;
 	this->strength = 1;
 	this->xPos = 0;
@@ -37,6 +39,8 @@ void Player::getStats() {
 	cout << "= Poziom:" << this->lvl << endl;
 	cout << "= Sila:" << this->strength<< endl;
 }
-
+void cClas() {
+	
+}
 void Player::fight() {}
 void Player::escape() {}

@@ -1,1 +1,10 @@
-﻿  Gra - projekt na zaliczenie przedmiotu.vcxproj -> C:\Users\ReinaArionAlkira\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\x64\Debug\Gra - projekt na zaliczenie przedmiotu.exe
+﻿  Game.cpp
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(41,7): error C2365: "Player::cClass": zmiana definicji; definicja poprzednia była "składowa danych"
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(17): message : zobacz deklarację „Player::cClass”
+  Player.cpp
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(41,7): error C2365: "Player::cClass": zmiana definicji; definicja poprzednia była "składowa danych"
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(17): message : zobacz deklarację „Player::cClass”
+  main.cpp
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(41,7): error C2365: "Player::cClass": zmiana definicji; definicja poprzednia była "składowa danych"
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.h(17): message : zobacz deklarację „Player::cClass”
+  Generowanie kodu...

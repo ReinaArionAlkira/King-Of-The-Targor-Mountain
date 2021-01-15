@@ -150,8 +150,10 @@
   <ItemGroup>
     <Text Include="pliki_tekstowe\about.txt" />
     <Text Include="pliki_tekstowe\guide.txt" />
-    <Text Include="pliki_tekstowe\klasy.txt" />
+    <Text Include="pliki_tekstowe\classes.txt" />
+    <Text Include="pliki_tekstowe\menu.txt" />
     <Text Include="pliki_tekstowe\moby.txt" />
+    <Text Include="pliki_tekstowe\players.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

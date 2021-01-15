@@ -40,10 +40,16 @@
     <Text Include="pliki_tekstowe\guide.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
-    <Text Include="pliki_tekstowe\klasy.txt">
+    <Text Include="pliki_tekstowe\moby.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
-    <Text Include="pliki_tekstowe\moby.txt">
+    <Text Include="pliki_tekstowe\menu.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="pliki_tekstowe\players.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="pliki_tekstowe\classes.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
   </ItemGroup>

@@ -1,6 +1,9 @@
 #pragma once
-#include "Game.h"
+#include <string>
+#include <iomanip> 
+#include <iostream>
 
+using namespace std;
 
 class Player{
 private:
@@ -11,6 +14,7 @@ private:
 	int strength;
 	string nickname;
 	string sex;
+	string cClass;
 
 public:
 	Player();
@@ -22,7 +26,7 @@ public:
 	void escape();
 
 	//Initialize
-	void initialize(const string nickname, string sex);
+	void initialize(const string nickname, string sex, string clas);
 
 	//Accessors
 	inline const int& getX() const { return this->xPos; };
@@ -34,5 +38,6 @@ public:
 	/*void add_class();
 	void change_sex();
 	void wear();*/
+	void cClas(); //character class
 };
 

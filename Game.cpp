@@ -2,7 +2,7 @@
 
 
 Game::Game() {
-	this->command = 0;
+	this->command = "";
 	this->max_lvl = 0;
 	this->play = true;
 }
@@ -11,30 +11,21 @@ Game::~Game() {
 
 //Functions
 void Game::menu() {
-	string line;
-	system("cls");
-	ifstream file("pliki_tekstowe/menu.txt");
-	if (file.is_open()) {
-		while (!file.eof()) {
-			getline(file, line);
-			cout << line << endl;
-		}
-	}
-	else {
-		cout << "Nie mozna otworzyc pliku!" << endl;
-	}
-	file.close();
+	option("menu.txt");
 	cout << "= ";
 	cin >> command;
-	switch (command) {
+	char com = command[0];
+	switch (com) {
 	case '1':
 		start();
 		break;
 	case '2':
 		option("about.txt");
+		back_to_menu();
 		break;
 	case '3':
 		option("guide.txt");
+
 		break;
 	case '4':
 		cout << "Gra zostanie wylaczona...";
@@ -49,15 +40,27 @@ void Game::menu() {
 	}
 }
 void Game::start() {
-
+	Player player1;
+	string command1, command2;
+	cout << "Podaj imie twojej postaci" << endl;
+	cin >> command;
+	cout << endl << "Podaj plec postaci" << endl;
+	cin >> command1;
+	cout << endl;
+	system("cls");
+	option("classes.txt");
+	cout << "Ktora klase wybierasz?" << endl;
+	cin >> command2;
+	player1.initialize(command, command1, command2);
 }
 
 void Game::back_to_menu() {
 	cout << "Chcesz wrocic do menu? Wpisz litere T i zatwierdz enterem" << endl;
 	cin >> command;
+	char com = command[0];
 	bool isGood = true;
 	while (isGood) {
-		if (command == 'T' || command == 't') {
+		if (com == 'T' || com == 't') {
 			isGood = false;
 			menu();
 		}
@@ -81,7 +84,6 @@ void Game::option(string f) {
 		cout << "Nie mozna otworzyc pliku!" << endl;
 	}
 	file.close();
-	back_to_menu();
 }
 
 void Game::board() {
