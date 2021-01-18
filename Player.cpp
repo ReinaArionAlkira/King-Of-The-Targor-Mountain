@@ -21,6 +21,19 @@ void Player::initialize(const string name, string gender, string clas) {
 	this->strength = 1;
 	this->xPos = 0;
 	this->yPos = 0;
+	this->luck = 0;
+
+	ofstream file1;
+	file1.open("pliki_tekstowe/" + name + ".txt", ios::trunc);
+	if (file1.is_open()) {
+		file1 << "Imie: " << name << "\nPlec: " << gender
+			<< "\nKlasa: " << clas << "\nPoziom: " << lvl 
+			<< "\nSila: " << strength << "\n";
+	}
+	else {
+		cout << "Nie mozna otworzyc pliku!" << endl;
+	}
+	file1.close();
 }
 
 void Player::create() {
@@ -34,10 +47,7 @@ void Player::create() {
 void Player::getStats() {
 
 	cout << "= Statystyki Postaci =" << endl;
-	cout << "= Imie: " << this->nickname << endl;
-	cout << "= Plec:" << this->sex << setw(10) << setfill(' ') << "\n";
-	cout << "= Poziom:" << this->lvl << endl;
-	cout << "= Sila:" << this->strength<< endl;
+	cout << "=";
 }
 void cClas() {
 	

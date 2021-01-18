@@ -31,6 +31,7 @@ void Game::menu() {
 		cout << "Gra zostanie wylaczona...";
 		Sleep(1000);
 		play = false;
+		end();
 		exit(0);
 		break;
 	default:
@@ -41,17 +42,45 @@ void Game::menu() {
 }
 void Game::start() {
 	Player player1;
-	string command1, command2;
+	string command1;
+	int command2{};
+	string clas;
 	cout << "Podaj imie twojej postaci" << endl;
 	cin >> command;
-	cout << endl << "Podaj plec postaci" << endl;
-	cin >> command1;
+	while (true) {
+		cout << "Podaj plec postaci [F/M]" << endl;
+		cin >> command1;
+		command1 = command1[0];
+		if (command1 == "f" || command1 == "F" || command1 == "M" || command1 == "m") {
+			break;
+		}
+		cout << "Niepoprawne dane!" << endl;
+	}
 	cout << endl;
 	system("cls");
 	option("classes.txt");
 	cout << "Ktora klase wybierasz?" << endl;
-	cin >> command2;
-	player1.initialize(command, command1, command2);
+	bool isGood = true;
+	while (isGood) {
+		isGood = false;
+		cin >> command2;
+		switch (command2) {
+		case 1:
+			clas = "Lotr";
+			break;
+		case 2:
+			clas = "Mag";
+			break;
+		case 3:
+			clas = "Wojownik";
+			break;
+		default:
+			cout << "Nie ma takiej komendy!" << endl;
+			isGood = true;
+			break;
+		}
+	}
+	player1.initialize(command, command1, clas);
 }
 
 void Game::back_to_menu() {
@@ -86,8 +115,16 @@ void Game::option(string f) {
 	file.close();
 }
 
+
 void Game::board() {
 
 
 }
 
+void Game::end() {
+	//czyszczenie danych o graczach
+	ofstream file;
+	file.open("pliki_tekstowe/players.txt", ios::trunc);
+	file << "";
+	file.close();
+}

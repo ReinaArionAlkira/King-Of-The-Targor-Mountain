@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <fstream>
 #include "Player.h"
 
 class Game {
@@ -22,6 +21,7 @@ public:
 	void option(string file);
 	void back_to_menu();
 	void board();
+	void end();
 
 	//Accessors
 	bool Play() const { return this->play; };

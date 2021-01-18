@@ -1,0 +1,5 @@
+Imie: f
+Plec: fsad
+Klasa: Wojownik
+Poziom: 1
+Sila: 1

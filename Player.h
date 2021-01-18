@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip> 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
 	string nickname;
 	string sex;
 	string cClass;
+	int luck;
 
 public:
 	Player();
@@ -35,9 +37,10 @@ public:
 	inline const int& getStrength() const { return this->strength; };
 	inline const string& getNickname() const { return this->nickname; };
 	inline const string& getSex() const { return this->sex; };
+	inline const string& getcClass() const { return this->cClass; };
 	/*void add_class();
 	void change_sex();
 	void wear();*/
-	void cClas(); //character class
+	//void cClas(); //character class
 };
 
