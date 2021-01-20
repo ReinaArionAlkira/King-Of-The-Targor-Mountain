@@ -1,10 +1,12 @@
 #pragma once
+
+#include "Inventory.h"
 #include <string>
 #include <iomanip> 
 #include <iostream>
 #include <fstream>
 
-using namespace std;
+
 
 class Player{
 private:
