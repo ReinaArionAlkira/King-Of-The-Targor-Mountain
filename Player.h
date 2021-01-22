@@ -1,17 +1,14 @@
 #pragma once
-
 #include "Inventory.h"
-#include <string>
-#include <iomanip> 
-#include <iostream>
-#include <fstream>
-
-
 
 class Player{
 private:
 	int xPos;
 	int yPos;
+
+	Inventory inventory;
+	Weapon weapon;
+	Armor armor;
 
 	int lvl;
 	int strength;
@@ -25,7 +22,6 @@ public:
 	virtual ~Player();
 	//Functions
 	void getStats();
-	void create();
 	void fight();
 	void escape();
 

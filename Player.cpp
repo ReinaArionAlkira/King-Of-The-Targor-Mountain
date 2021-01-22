@@ -35,15 +35,6 @@ void Player::initialize(const string name, string gender, string clas) {
 	}
 	file1.close();
 }
-
-void Player::create() {
-
-	cout << "Gracz 1: " << endl;
-	cout << "Ustaw nick: ";
-	cin >> this->nickname;
-	cout << endl << "Podaj swoja plec: [F/M]";
-	cin >> this->sex;
-}
 void Player::getStats() {
 
 	cout << "= Statystyki Postaci =" << endl;

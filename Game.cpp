@@ -46,6 +46,7 @@ void Game::start() {
 	int command2{};
 	string clas;
 	cout << "Podaj imie twojej postaci" << endl;
+	cin.ignore();
 	cin >> command;
 	while (true) {
 		cout << "Podaj plec postaci [F/M]" << endl;
