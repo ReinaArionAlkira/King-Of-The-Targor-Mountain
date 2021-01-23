@@ -1,7 +1,7 @@
 #include "Weapon.h"
 
-Weapon::Weapon(int strenght, string name, int value) :Item(name, value){
-	this->strenght;
+Weapon::Weapon(int strength, string name, int value) :Item(name, value){
+	this->strength;
 }
 Weapon::~Weapon() {
 

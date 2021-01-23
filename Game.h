@@ -16,6 +16,7 @@ public:
 	//Operators
 
 	//Functions
+	void createCharacter();
 	void menu();
 	void start();
 	void option(string file);

@@ -41,6 +41,10 @@ void Game::menu() {
 	}
 }
 void Game::start() {
+	Inventory inv;
+	createCharacter();
+}
+void Game::createCharacter() {
 	Player player1;
 	string command1;
 	int command2{};
@@ -83,7 +87,6 @@ void Game::start() {
 	}
 	player1.initialize(command, command1, clas);
 }
-
 void Game::back_to_menu() {
 	cout << "Chcesz wrocic do menu? Wpisz litere T i zatwierdz enterem" << endl;
 	cin >> command;

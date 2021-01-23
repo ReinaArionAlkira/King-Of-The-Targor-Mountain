@@ -5,10 +5,10 @@ class Weapon:
 	public Item {
 
 private:
-	int strenght;
+	int strength;
 	
 public:
-	Weapon(int strenght = 0, string name = "NONE", int value = 0);
+	Weapon(int strength = 0, string name = "NONE", int value = 0);
 	virtual~Weapon();
 	//Pure virtual
 	virtual Weapon* clone() const;

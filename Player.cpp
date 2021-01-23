@@ -38,6 +38,8 @@ void Player::initialize(const string name, string gender, string clas) {
 void Player::getStats() {
 
 	cout << "= Statystyki Postaci =" << endl;
+	ifstream file;
+	option("players.txt");
 	cout << "=";
 }
 void cClas() {
