@@ -1,0 +1,10 @@
+==========================
+=		Ewkipunek		 =
+=						 =
+=	Co chcesz zrobiæ?	 =
+= Wybierz jedna z opcji: =
+= 1. Uzyj przedmiotu.	 =
+= 2. Sprzedaj przedmiot. =
+= 3. Kup poziom.		 =
+= 4. Wyjscie.			 =
+==========================

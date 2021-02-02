@@ -42,6 +42,9 @@
     <ClCompile Include="GlobalFunctions.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -71,6 +74,9 @@
     <ClInclude Include="GlobalFunctions.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pliki_tekstowe\about.txt">
@@ -92,6 +98,12 @@
       <Filter>Pliki zasobów</Filter>
     </Text>
     <Text Include="pliki_tekstowe\mobs.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="menuInGame.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="pliki_tekstowe\menuInventory.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
   </ItemGroup>

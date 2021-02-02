@@ -1,0 +1,10 @@
+==========================
+=		  Mapa			 =
+=						 =
+=	Co chcesz zrobiæ?	 =
+= Wybierz jedna z opcji: =
+= 1. Rusz sie.			 =
+= 2. Ekwipunek.			 =
+= 3. Kup poziom.		 =
+= 4. Wyjscie.			 =
+==========================

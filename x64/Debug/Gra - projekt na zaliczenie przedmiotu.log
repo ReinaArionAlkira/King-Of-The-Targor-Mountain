@@ -1,5 +1,9 @@
-﻿  Game.cpp
-  Player.cpp
+﻿  Event.cpp
+  Game.cpp
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Game.cpp(170,3): error C3861: "shop": identyfikatora nie odnaleziono
   main.cpp
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\main.cpp(6,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\main.cpp(9,19): error C2660: "Game::menuInGame": funkcja nie przyjmuje 0 argumentów
+C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Game.h(28,7): message : zobacz deklarację „Game::menuInGame”
+  Player.cpp
   Generowanie kodu...
-  Gra - projekt na zaliczenie przedmiotu.vcxproj -> C:\Users\A49\Source\Repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\x64\Debug\Gra - projekt na zaliczenie przedmiotu.exe

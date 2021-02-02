@@ -1,0 +1,5 @@
+Imie: slsal sd
+Plec: f
+Klasa: Wojownik
+Poziom: 1
+Sila: 1

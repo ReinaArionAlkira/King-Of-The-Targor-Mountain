@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlobalFunctions.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="Armor.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalFunctions.h" />
     <ClInclude Include="Includes.h" />
@@ -161,10 +163,12 @@
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="menuInGame.txt" />
     <Text Include="pliki_tekstowe\about.txt" />
     <Text Include="pliki_tekstowe\guide.txt" />
     <Text Include="pliki_tekstowe\classes.txt" />
     <Text Include="pliki_tekstowe\menu.txt" />
+    <Text Include="pliki_tekstowe\menuInventory.txt" />
     <Text Include="pliki_tekstowe\mobs.txt" />
     <Text Include="pliki_tekstowe\players.txt" />
     <Text Include="pliki_tekstowe\Items.txt" />

@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Inventory.h"
+#include "Enemy.h"
 
 class Player{
 private:
@@ -24,9 +26,9 @@ public:
 	void getStats();
 	void fight();
 	void escape();
-
+	void move();
 	//Initialize
-	void initialize(const string nickname, string sex, string clas);
+	Player initialize(const string nickname, string sex, string clas);
 
 	//Accessors
 	inline const int& getX() const { return this->xPos; };
@@ -36,6 +38,10 @@ public:
 	inline const string& getNickname() const { return this->nickname; };
 	inline const string& getSex() const { return this->sex; };
 	inline const string& getcClass() const { return this->cClass; };
+
+	inline void levelUp() { this->lvl++; }
+	inline void levelDown() { if(this->lvl > 1) this->lvl--; }
+	inline void changeSex() { this->sex == "F" ? this->sex = "M" : this->sex = "F"; }
 	/*void add_class();
 	void change_sex();
 	void wear();*/

@@ -1,8 +1,10 @@
 #pragma once
+
 #include "includes.h"
-//!!!!!!!!!!!!!!!!!!!!!!!!!
-class GlobalFunctions
-{
-	//void option(string file);
-};
+
+//class GlobalFunctions
+//{
+//public:
+//	void openFile(string file);
+//};
 

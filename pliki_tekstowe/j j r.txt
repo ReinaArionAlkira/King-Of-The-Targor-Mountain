@@ -1,0 +1,5 @@
+Imie: j j r
+Plec: F
+Klasa: Mag
+Poziom: 1
+Sila: 1
