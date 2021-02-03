@@ -2,11 +2,12 @@
 
 int main() {
 	Game game;
-	srand(time(NULL));
-	game.start();
+	srand( time_t(NULL) );
 	game.menu();
+
 	while (game.Play()) {
 		game.menuInGame();
 	}
+	game.end();
 	return 0;
 }

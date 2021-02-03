@@ -77,6 +77,9 @@
     <ClInclude Include="Event.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pliki_tekstowe\about.txt">
@@ -100,10 +103,13 @@
     <Text Include="pliki_tekstowe\mobs.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
-    <Text Include="menuInGame.txt">
+    <Text Include="pliki_tekstowe\menuInventory.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
-    <Text Include="pliki_tekstowe\menuInventory.txt">
+    <Text Include="pliki_tekstowe\menuInGame.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="text files\menuBattle.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
   </ItemGroup>

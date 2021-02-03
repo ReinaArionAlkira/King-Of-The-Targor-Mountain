@@ -1,5 +1,0 @@
-Imie: lsl
-Plec: F
-Klasa: Wojownik
-Poziom: 1
-Sila: 1

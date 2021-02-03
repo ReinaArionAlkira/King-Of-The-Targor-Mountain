@@ -1,5 +1,0 @@
-Imie: ds
-Plec: f
-Klasa: Mag
-Poziom: 1
-Sila: 1

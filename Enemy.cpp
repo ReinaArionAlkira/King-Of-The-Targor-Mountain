@@ -5,7 +5,7 @@ Enemy::Enemy(int idx, string f) {
 	//Miejsce pocz¹tku danych danego obiektuA
 	int startObj = idx * 5;
 	string line = "";
-	ifstream file("pliki_tekstowe/" + f);
+	ifstream file("text_files/" + f);
 	//Przeskakiwanie nieistotnych w danej chwili linijek tekstu
 	//Czyli ustawienie wskaŸnika do pliku na starcie obiektu)
 	if (startObj > 1) {
@@ -54,10 +54,10 @@ void Enemy::changeStrength() {
 
 //Wczytywanie statystyk obiektu na ekran
 void Enemy::getStats() {
-	cout << this->index << endl << "Name: " << this->name << endl
-		<< "Strength: " << this->strength << endl
-		<< "Add for class: " << this->clasAd << endl
-		<< "Add: " << this->adds << endl;
+	cout << this->index << endl << "Nazwa stwora: " << this->name << endl
+		<< "Sila: " << this->strength << endl
+		<< "Bonus do obrazen przeciw: " << this->clasAd << endl
+		<< "Wartosc bonusu: " << this->adds << endl;
 }
 
 //Tworzenie obiektu z pliku na podstawie indexu

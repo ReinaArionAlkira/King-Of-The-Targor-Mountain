@@ -1,5 +1,0 @@
-Imie: ks asd
-Plec: f
-Klasa: Wojownik
-Poziom: 1
-Sila: 1

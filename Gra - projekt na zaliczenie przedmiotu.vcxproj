@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Game.h" />
@@ -163,15 +164,16 @@
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="menuInGame.txt" />
     <Text Include="pliki_tekstowe\about.txt" />
     <Text Include="pliki_tekstowe\guide.txt" />
     <Text Include="pliki_tekstowe\classes.txt" />
     <Text Include="pliki_tekstowe\menu.txt" />
+    <Text Include="pliki_tekstowe\menuInGame.txt" />
     <Text Include="pliki_tekstowe\menuInventory.txt" />
     <Text Include="pliki_tekstowe\mobs.txt" />
     <Text Include="pliki_tekstowe\players.txt" />
     <Text Include="pliki_tekstowe\Items.txt" />
+    <Text Include="text files\menuBattle.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

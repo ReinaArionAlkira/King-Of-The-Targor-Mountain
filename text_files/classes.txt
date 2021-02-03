@@ -6,12 +6,10 @@ Slaby przeciw:
 
 Silny przeciw: Eteryzm
 Slaby przeciw: Woda
-
 3. Wojownik:
 Ucieczka: -1
 Silny przeciw: Kamien
 Slaby przeciw: Ogien
-
 4. Pirat:
 
 Silny przeciwko: Woda

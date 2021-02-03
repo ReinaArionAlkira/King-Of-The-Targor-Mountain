@@ -12,11 +12,11 @@ private:
 	Weapon weapon;
 	Armor armor;
 
+	string nickname;
+	char sex;
+	string cClass;
 	int lvl;
 	int strength;
-	string nickname;
-	string sex;
-	string cClass;
 	int luck;
 
 public:
@@ -28,7 +28,7 @@ public:
 	void escape();
 	void move();
 	//Initialize
-	Player initialize(const string nickname, string sex, string clas);
+	Player initialize(const string nickname, char sex, string clas);
 
 	//Accessors
 	inline const int& getX() const { return this->xPos; };
@@ -36,12 +36,14 @@ public:
 	inline const int& getLvl() const { return this->lvl; };
 	inline const int& getStrength() const { return this->strength; };
 	inline const string& getNickname() const { return this->nickname; };
-	inline const string& getSex() const { return this->sex; };
+	inline const char& getSex() const { return this->sex; };
 	inline const string& getcClass() const { return this->cClass; };
 
+
+	//Modifiers
 	inline void levelUp() { this->lvl++; }
 	inline void levelDown() { if(this->lvl > 1) this->lvl--; }
-	inline void changeSex() { this->sex == "F" ? this->sex = "M" : this->sex = "F"; }
+	inline void changeSex() { this->sex == 'F' ? this->sex = 'M' : this->sex = 'F'; }
 	/*void add_class();
 	void change_sex();
 	void wear();*/

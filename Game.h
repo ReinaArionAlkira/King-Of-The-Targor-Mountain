@@ -2,14 +2,20 @@
 
 #include "Event.h"
 
+
 class Game {
 	
 private:
 	//variables
+	char command;
+	string input;
 	int max_lvl;
-	string command;
 	bool play;
 	Player player;
+	
+	//Enemies
+	DynamicArray<Enemy> enemies;
+
 public:
 	Game();
 	virtual ~Game();
@@ -19,7 +25,6 @@ public:
 	//Functions
 	void createCharacter();
 	void start();
-	void option(string file);
 	void back_to_menu(int which = 0);
 	void board();
 	void end();

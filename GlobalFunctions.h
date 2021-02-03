@@ -1,10 +1,6 @@
 #pragma once
 
 #include "includes.h"
+void readFile(string f);
 
-//class GlobalFunctions
-//{
-//public:
-//	void openFile(string file);
-//};
 

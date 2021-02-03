@@ -1,10 +1,11 @@
 ==========================
-=		Ewkipunek		 =
-=						 =
-=	Co chcesz zrobiæ?	 =
+=  Ekwipunek		 =
+=			 =
+= Co chcesz zrobic?	 =
 = Wybierz jedna z opcji: =
 = 1. Uzyj przedmiotu.	 =
 = 2. Sprzedaj przedmiot. =
-= 3. Kup poziom.		 =
-= 4. Wyjscie.			 =
+= 3. Kup poziom.	 =
+= 4. Powrot do mapy.	 =
+= 5. Wyjscie z gry.	 =
 ==========================

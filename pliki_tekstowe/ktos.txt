@@ -1,5 +1,0 @@
-Imie: ktos
-Plec: F
-Klasa: Mag
-Poziom: 1
-Sila: 1

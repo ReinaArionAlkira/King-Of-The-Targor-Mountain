@@ -1,5 +1,0 @@
-Imie: m
-Plec: f
-Klasa: Lotr
-Poziom: 1
-Sila: 1
