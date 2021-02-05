@@ -166,7 +166,7 @@ void Game::menuInGame() {
 		makeAMove(this->player);
 		ev.generateEvent(this->player);
 		break;
-	case '2':
+	case '2': //Statystyki
 		this->player.getStats();
 		back_to_menu(1);
 		break;
@@ -176,7 +176,7 @@ void Game::menuInGame() {
 		break;
 	case '4': // Sklep (kupowanie poziomu)
 		shop();
-		back_to_menu(1);
+		menuInGame();
 		break;
 	case '5': // Wyjœcie
 		cout << "Gra zostanie wylaczona...";
@@ -209,7 +209,6 @@ void Game::menuInventory(Player& player) {
 	switch (command) {
 	case '1': // za³ó¿ przedmiot	
 		cout << this->player.getInvAsString(); 
-		cin.ignore(100, '\n');
 		cout << "Index przedmiotu: " << endl << "= ";
 		cin >> choice;
 
@@ -250,11 +249,15 @@ void Game::menuInventory(Player& player) {
 }
 
 void Game::makeAMove(Player& player) {
+	system("cls");
 	string input;
 	char command;
 	bool isGood = true;
 	while (isGood) {
-		cout << "W ktora strone?" << endl
+		cout << endl <<
+			" = Twoja pozycja: " << this->player.getX() << ", " << this->player.getY() << endl;
+		this->showBoard();
+		cout << "= W ktora strone? = " << endl
 			<< "= 1. W lewo. =" << endl
 			<< "= 2. W prawo. =" << endl
 			<< "= 3. W gore. =" << endl
@@ -262,14 +265,14 @@ void Game::makeAMove(Player& player) {
 			<< "= ";
 		cin >> input;
 		if (input.size() > 1) {
+
 			cout << "Wprowadzono za duzo znakow!" << endl << "= ";
-			Sleep(1500);
 			cin.ignore(100, '\n');
-			cin >> input;
 			continue;
 		}
 		command = input[0];
 		cin.ignore(1000, '\n');
+		system("cls");
 		switch (command) {
 		case '1': //Lewo
 			if (this->player.getY() == 0
@@ -340,12 +343,106 @@ void Game::makeAMove(Player& player) {
 			Sleep(1500);
 			break;
 		}
-		cout << this->player.getX() << endl << this->player.getY() << endl;
+	}
+		cout << endl<< 
+			"Twoja pozycja: " << this->player.getX() << ", " << this->player.getY() << endl;
 		this->showBoard();
 		Sleep(2000);
-	}
+	
 }
 void Game::shop() {
+	system("cls");
+	cout << "===========================" << endl
+		<< "=	Sklep		  =" << endl 
+		<< "=			  =" << endl
+		<< "= Co chcesz zrobic?	  =" << endl
+		<< "= 1. Kup poziom.	  =" << endl
+		<< "= 2. Sprzedaj przedmioty. =" << endl
+		<< "= 3. Powrot do mapy.	  ="<< endl
+		<< "= Twoje zloto: " << this->player.getGold() << endl 
+		<< "===========================" << endl << endl;
+	cout << "= ";
+	string input;
+	int choice{};
+	cin >> input;
+	if (input.size() > 1) {
+		cout << "Wprowadzono za duzo znakow!";
+		Sleep(1500);
+		cin.ignore(100, '\n');
+		menuInventory(this->player);
+	}
+	command = input[0];
+	cin.ignore(1000, '\n');
+	switch (command) {
+	case '1'://Kup poziom
+
+		if (this->player.getLvl() == 9) {
+			cout << "Nie mozesz kupic ostatniego poziomu!" << endl;
+
+		}
+		else if (this->player.getGold() >= 1000) {
+			this->player.payGold(1000);
+			this->player.levelUp();
+			cout << "Kupiles poziom!" << endl;
+		}
+		else {
+			cout << "Nie masz wystarczajaco zlota!" << endl;
+		}
+		break;
+	case '2'://Sprzedaj przedmioty
+
+		cout << this->player.getInvAsString() << endl;
+		cout << " - Twoje zloto: " << this->player.getGold() << endl << endl;
+
+		if (this->player.getInventorySize() > 0){
+			cout << "Zloto: " << this->player.getGold() << endl;
+			cout << "Wybierz przedmiot (-1 anuluj tranzakcje): ";
+			cin >> choice;
+
+			while (cin.fail() || choice > this->player.getInventorySize() || choice < -1){
+				system("CLS");
+
+				cout << "Niepoprawne dane!" << endl;
+				cin.clear();
+				cin.ignore(100, '\n');
+
+				cout << "Zloto: " << this->player.getGold() << endl;
+				cout << "Wybierz przedmiot (-1 anuluj tranzakcje): ";
+				cin >> choice;
+			}
+
+			cin.ignore(100, '\n');
+			cout << endl;
+
+			if (choice == -1)
+			{
+				cout << "Anulowano..." << endl;
+			}
+			else
+			{
+				this->player.gainGold(this->player.getItem(choice).getValue());
+
+				cout << "Sprzedane!" << endl;
+				cout << "Otrzymane zloto: " << this->player.getItem(choice).getValue() << endl << endl;
+				this->player.removeItem(choice);
+			}
+		}
+		else
+		{
+			cout << "Ekwipunek jest pusty..." << endl;
+		}
+		break;
+	case '3'://Powrót do menu
+		menuInGame();
+		break;
+	default:
+		cout << "Nie ma takiej opcji!";
+		Sleep(1500);
+		break;
+	}
+	cout << "Wpisz cokolwiek i wcisnij Enter, by kontynuowac..." << endl;
+	cin.get();
+	cin.ignore();
 
 }
 

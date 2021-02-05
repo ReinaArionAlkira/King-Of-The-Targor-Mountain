@@ -77,9 +77,6 @@
     <ClInclude Include="Event.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicArray.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pliki_tekstowe\about.txt">

@@ -18,9 +18,9 @@ void Event::generateEvent(Player &player) {
 		//Kl¹twa
 		getCurse(player);
 		break;
-	case 2:
-		//Skarb
-		break;
+	//case 2:
+	//	//Skarb
+	//	break;
 	}
 }
 
@@ -30,7 +30,7 @@ void Event::enemyEncounter(Player &player) {
 	string input;
 
 	//Losowanie rodzaju przeciwnika
-	int idx = rand() % 4;
+	int idx = rand() % 5;
 	Enemy enemy(idx);
 
 	//Warunki zakoñczenia walki
@@ -57,11 +57,8 @@ void Event::enemyEncounter(Player &player) {
 		command = input[0];
 		cin.ignore(1000, '\n');
 		switch (command) {
-		case '1': //Ucieczka, czyli rzut koœci¹ + szczêœcie postaci
-				escape(player, enemy, escaped, playerDefeted);
-			break;
-		case '2': //Atak
-			//Sprawdzenie si³y obu stron
+		case '1': //Atak
+		//Sprawdzenie si³y obu stron
 			if (enemy.getStrength() >= player.getStrength()) {
 				playerDefeted = true;
 			}
@@ -70,10 +67,12 @@ void Event::enemyEncounter(Player &player) {
 				enemiesDefeted = true;
 			}
 			break;
-		case '3': //U¿ycie przedmiotu
-			
+		case '2': //Ucieczka, czyli rzut koœci¹ + szczêœcie postaci
+				escape(player, enemy, escaped, playerDefeted);
 			break;
-		case '4':
+		
+		//case '3': //U¿ycie przedmiotu
+		case '3':
 			cout << "Gra zostanie wylaczona...";
 			Sleep(1000);
 			exit(0);
@@ -128,6 +127,8 @@ void Event::enemyEncounter(Player &player) {
 void Event::escape(Player& player, Enemy& enemy, bool& escaped, bool& playerDefeted) {
 	int diceToss;
 	diceToss = (rand() % 6 + 1) + player.getLuck();
+	cout << "= Aby uciec potrzebujesz wyrzucic na kosci wiecej niz 4 (twoje szczescie zwieksza mozliwosci)" << endl;
+	cout <<"= Wylosowales: " << diceToss;
 	if (diceToss >= 5) {
 		cout << "Udalo ci sie zwiac!" << endl;
 		escaped = true;

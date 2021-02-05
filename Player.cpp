@@ -43,6 +43,17 @@ Player Player::initialize(const string name, char gender) {
 	//file1.close();
 	return *this;
 }
+const Item& Player::getItem(const int index)
+{
+	if (index < 0 || index >= this->inventory.size())
+	{
+		cout << "Error" << "\n\n";
+		throw("Error");
+	}
+
+	return this->inventory[index];
+}
+
 string Player::getInvAsString() {
 	string inv;
 	for (int i = 0; i < this->inventory.size(); i++){

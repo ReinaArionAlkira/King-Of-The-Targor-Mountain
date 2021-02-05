@@ -1,12 +1,10 @@
 #pragma once
 
-#include <windows.h>
-#include <conio.h>
-#include <iomanip> 
+#include <windows.h> //system("cls") sleep()
+#include <conio.h>	 //rand()
+#include <iomanip>   //set(w) setfill()
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <list>
-#include "DynamicArray.h"
+#include <fstream>   //operacje na plikach
+#include <string>    //stringi
 
 using namespace std;

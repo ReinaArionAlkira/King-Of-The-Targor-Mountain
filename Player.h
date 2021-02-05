@@ -39,6 +39,9 @@ public:
 	inline const string& getNickname() const { return this->nickname; };
 	inline const char& getSex() const { return this->sex; };
 	inline const int getInventorySize()const { return this->inventory.size(); }
+	inline const int getGold()const { return this->gold; }
+	
+
 	//inline const string& getcClass() const { return this->cClass; };
 
 	//Functions
@@ -47,6 +50,8 @@ public:
 	string getInvAsString();
 	inline void levelUp() { this->lvl++; this->strength++; }
 	inline void levelDown() { if(this->lvl > 1) this->lvl--; }
+	inline void gainGold(const int gold) { this->gold += gold; }
+	inline void payGold(const int gold) { this->gold -= gold; }
 	inline void changeSex() { this->sex == 'F' ? this->sex = 'M' : this->sex = 'F'; }
 	void updateStrength() {
 		this->strength = (this->strength 
@@ -59,6 +64,7 @@ public:
 	void travel(int direction);
 	void equipItem(unsigned index);
 	void removeItem(const int index);
+	const Item& getItem(const int index);
 
 	//void add_class();
 	//void cClas(); //character class

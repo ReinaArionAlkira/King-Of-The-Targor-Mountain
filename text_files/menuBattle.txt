@@ -3,8 +3,7 @@
 =			 =
 = Co chcesz zrobic?	 =
 = Wybierz jedna z opcji: =
-= 1. Uciekaj.		 =
-= 2. Zaatakuj.		 =
-= 3. Uzyj przedmiotu.	 =
-= 4. Wyjscie z gry.	 =
+= 1. Zaatakuj.		 =
+= 2. Uciekaj.		 =
+= 3. Wyjscie z gry.	 =
 ==========================
