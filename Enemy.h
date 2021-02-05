@@ -16,6 +16,8 @@ public:
 	virtual ~Enemy();
 	//Functions
 	inline bool isAlive() { return this->strength != 0; };
+	inline const int& getStrength() const { return this->strength; };
+	inline const string& getName() const { return this->name; };
 	//Modifiers
 	void changeStrength();
 	void getStats();

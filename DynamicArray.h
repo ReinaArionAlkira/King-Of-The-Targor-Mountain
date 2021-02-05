@@ -7,7 +7,7 @@ private:
 	unsigned nrOfElem;
 	unsigned capacity;
 	unsigned initialCap;
-	T* *arr;
+	T** arr;
 
 	void expand();
 	void initialize(unsigned from);
@@ -58,9 +58,10 @@ DynamicArray<T>::~DynamicArray(){
 
 template<typename T>
 T& DynamicArray<T>::operator[] (const unsigned index) {
-	if (index < 0 || index >= this->nrOfElem)
+	if (index < 0 || index >= this->nrOfElem){
 		throw "Out of bounds indexing operator.";
-		return *this->arr[index];
+	}
+	return *this->arr[index];
 }
 
 template<typename T>
@@ -127,6 +128,7 @@ void DynamicArray<T>::push(const T element) {
 template<typename T>
 void DynamicArray<T>::remowe(const unsigned index, bool ordered) {
 	if (index < 0 || index >= this->nrOfElem)
+		throw("Index poza zasiegiem!");
 	if (ordered) {
 		delete this->arr[index];
 

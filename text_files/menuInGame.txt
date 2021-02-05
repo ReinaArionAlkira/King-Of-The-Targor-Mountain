@@ -4,7 +4,8 @@
 = Co chcesz zrobic?	 =
 = Wybierz jedna z opcji: =
 = 1. Rusz sie.		 =
-= 2. Ekwipunek.		 =
-= 3. Kup poziom.	 =
-= 4. Wyjscie z gry.	 =
+= 2. Moje statystyki	 =
+= 3. Ekwipunek.		 =
+= 4. Kup poziom.	 =
+= 5. Wyjscie z gry.	 =
 ==========================

@@ -9,12 +9,27 @@ private:
 	int strength;
 	
 public:
-	Weapon(int strength = 0, string name = "NONE", int value = 0);
+	Weapon();
+	Weapon(int strength);
+	Weapon(int strength, string name, int value);
 	virtual~Weapon();
 	//Pure virtual
 	virtual Weapon* clone() const;
 
 	//Functions
+
+	//Accessors
+	inline int getStrength() const { return this->strength; }
+	string getStatsAsString() const;
+	//Modifiers
+
+	//Static
+	string names[5] = { "Noz do masla",
+		"Nozyce",
+		"Katana",
+		"Potezny mlot",
+		"Marna palka"
+	};
 };
 
 

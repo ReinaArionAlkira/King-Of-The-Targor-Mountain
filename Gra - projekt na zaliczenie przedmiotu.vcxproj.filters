@@ -100,9 +100,6 @@
     <Text Include="pliki_tekstowe\Items.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
-    <Text Include="pliki_tekstowe\mobs.txt">
-      <Filter>Pliki zasobów</Filter>
-    </Text>
     <Text Include="pliki_tekstowe\menuInventory.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
@@ -110,6 +107,9 @@
       <Filter>Pliki zasobów</Filter>
     </Text>
     <Text Include="text files\menuBattle.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="text_files\mobs.txt">
       <Filter>Pliki zasobów</Filter>
     </Text>
   </ItemGroup>

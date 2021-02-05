@@ -49,7 +49,12 @@ void Game::menu() {
 }
 void Game::start() {
 	createCharacter();
-	this->player.getStats();
+	board();
+	Inventory inv;
+	Weapon w1(1);
+	Armor a1(1);
+	this->player.addItem(w1);
+	this->player.addItem(a1);
 
 }
 void Game::createCharacter() {
@@ -76,7 +81,7 @@ void Game::createCharacter() {
 	}
 	cout << endl;
 	system("cls");
-	readFile("classes.txt");
+	/*readFile("classes.txt");
 	cout << "Ktora klase wybierasz?" << endl << "= ";
 	bool isGood = true;
 	while (isGood) {
@@ -106,23 +111,20 @@ void Game::createCharacter() {
 			isGood = true;
 			break;
 		}
-	}
-	this->player.initialize(name, command, clas);
+	}*/
+
+	this->player.initialize(name, command);
 
 }
 void Game::back_to_menu(int which) {
 	cout << "Chcesz wrocic do menu? Wpisz litere T i zatwierdz enterem" << endl << "= ";
 	string input;
-	cin >> input;
-	//cin.ignore(100, '\n');
-	//cout << com;
 	bool isGood = true;
 	while (isGood) {
 		cin >> input;
 		if (input.size() > 1) {
 			cout << "Wprowadzono za duzo znakow!" << endl << "= ";
-			Sleep(1500);
-			cin.ignore(100, '\n');
+			Sleep(1000);
 			continue;
 		}
 		command = input[0];
@@ -142,7 +144,6 @@ void Game::back_to_menu(int which) {
 		}
 		else {
 			cout << "Podales zly znak!" << endl << "= ";
-			cin >> input;
 		}
 	}
 
@@ -157,23 +158,27 @@ void Game::menuInGame() {
 	command = input[0];
 	if (input.size() > 1) {
 		cout << "Wprowadzono za duzo znakow!";
-		Sleep(1500);
+		Sleep(1000);
 		menuInGame();
 	}
 	switch (command) {
 	case '1': // RUCH
-		this->player.move();
-		ev.generateEvent(this->player, this->enemies);
+		makeAMove(this->player);
+		ev.generateEvent(this->player);
 		break;
-	case '2': // EKWIPUNEK
+	case '2':
+		this->player.getStats();
+		back_to_menu(1);
+		break;
+	case '3': // EKWIPUNEK
 		menuInventory(this->player);
 		back_to_menu(1);
 		break;
-	case '3': // SKLEP (kupowanie poziomu)
+	case '4': // Sklep (kupowanie poziomu)
 		shop();
 		back_to_menu(1);
 		break;
-	case '4': // Wyjœcie
+	case '5': // Wyjœcie
 		cout << "Gra zostanie wylaczona...";
 		Sleep(1000);
 		play = false;
@@ -184,32 +189,53 @@ void Game::menuInGame() {
 		cout << "Nie ma takiej opcji!";
 		Sleep(1500);
 		menuInGame();
+		break;
 	}
 }
 void Game::menuInventory(Player& player) {
+	int choice{};
 	readFile("menuInventory.txt");
 	cout << "= ";
 	string input;
 	cin >> input;
-	command = input[0];
 	if (input.size() > 1) {
 		cout << "Wprowadzono za duzo znakow!";
 		Sleep(1500);
-		menuInventory(player);
+		cin.ignore(100, '\n');
+		menuInventory(this->player);
 	}
+	command = input[0];
+	cin.ignore(1000, '\n');
 	switch (command) {
-	case '1': // uzyj przedmiotu
+	case '1': // za³ó¿ przedmiot	
+		cout << this->player.getInvAsString(); 
+		cin.ignore(100, '\n');
+		cout << "Index przedmiotu: " << endl << "= ";
+		cin >> choice;
+
+		while (cin.fail() || choice < 0 || choice >= this->player.getInventorySize()) {
+			cout << "Niepoprawne dane!" << "\n";
+			cin.clear();
+			cin.ignore(100, '\n');
+
+			cout << "Index przedmiotu: " << endl << "= ";
+			cin >> choice;
+		}
+
+		cin.ignore(100, '\n');
+		cout << "\n";
+
+		this->player.equipItem(choice);
+		this->player.updateStrength();
 
 		break;
-	case '2': // sprzedaj przedmiot
-
+	case '2': // poka¿ przedmioty
+		cout << player.getInvAsString();
 		break;
-	case '3': // kup poziom
-		break;
-	case '4': // powrot do mapy
+	case '3': // powrot do mapy
 		menuInGame();
 		break;
-	case '5':
+	case '4': // Wyjœcie z gry
 		cout << "Gra zostanie wylaczona...";
 		Sleep(1000);
 		play = false;
@@ -219,19 +245,162 @@ void Game::menuInventory(Player& player) {
 	default:
 		cout << "Nie ma takiej opcji!";
 		Sleep(1500);
-		menuInventory(player);
+		menuInventory(this->player);
 	}
 }
 
+void Game::makeAMove(Player& player) {
+	string input;
+	char command;
+	bool isGood = true;
+	while (isGood) {
+		cout << "W ktora strone?" << endl
+			<< "= 1. W lewo. =" << endl
+			<< "= 2. W prawo. =" << endl
+			<< "= 3. W gore. =" << endl
+			<< "= 4. W dol. =" << endl
+			<< "= ";
+		cin >> input;
+		if (input.size() > 1) {
+			cout << "Wprowadzono za duzo znakow!" << endl << "= ";
+			Sleep(1500);
+			cin.ignore(100, '\n');
+			cin >> input;
+			continue;
+		}
+		command = input[0];
+		cin.ignore(1000, '\n');
+		switch (command) {
+		case '1': //Lewo
+			if (this->player.getY() == 0
+				|| (this->player.getX() >= 1 && this->player.getX() <= 5 && this->player.getY() == 1)
+				|| (this->player.getX() >= 2 && this->player.getX() <= 4 && this->player.getY() == 2))
+				cout << "Nie mozesz tam zejsc!" << endl;
+			else if (((this->player.getX() >= 1 && this->player.getX() <= 5 && this->player.getY() == 6 && this->player.getLvl() <= 4)
+				|| (this->player.getX() >= 2 && this->player.getX() <= 4 && this->player.getY() == 5 && this->player.getLvl() <= 6)
+				|| (this->player.getX() == 3 && this->player.getY() == 5 && this->player.getLvl() <= 9)))
+				cout << "Nie mozesz tam wejsc!" << endl;
+			else {
+				isGood = false;
+				this->map[this->player.getX()][this->player.getY()] = 'X';
+				this->player.travel(1);
+				this->map[this->player.getX()][this->player.getY()] = '@';
+			}
+			break;
+		case '2': //Prawo
+			if (this->player.getY() == 6
+				|| (this->player.getX() >= 1 && this->player.getX() <= 5 && this->player.getY() == 5)
+				|| (this->player.getX() >= 2 && this->player.getX() <= 4 && this->player.getY() == 4))
+				cout << "Nie mozesz tam zejsc!" << endl;
+			else if (((this->player.getX() >= 1 && this->player.getX() <= 5) && this->player.getY() == 0 && this->player.getLvl() <= 4)
+				|| ((this->player.getX() >= 2 && this->player.getX() <= 4) && this->player.getY() == 1 && this->player.getLvl() <= 6)
+				|| (this->player.getX() == 3 && this->player.getY() == 5 && this->player.getLvl() <= 9))
+				cout << "Nie mozesz tam wejsc!" << endl;
+			else {
+				isGood = false;
+				this->map[this->player.getX()][this->player.getY()] = 'X';
+				this->player.travel(2);
+				this->map[this->player.getX()][this->player.getY()] = '@';
+			}
+			break;
+		case '3': //Góra
+			if (this->player.getX() == 0
+				|| (this->player.getY() >= 1 && this->player.getY() <= 5 && this->player.getX() == 1)
+				|| (this->player.getY() >= 2 && this->player.getY() <= 4 && this->player.getX() == 2))
+				cout << "Nie mozesz tam zejsc!" << endl;
+			else if (((this->player.getY() >= 1 && this->player.getY() <= 5 && this->player.getX() == 6 && this->player.getLvl() <= 4)
+				|| (this->player.getY() >= 2 && this->player.getY() <= 4 && this->player.getX() == 5 && this->player.getLvl() <= 6)
+				|| (this->player.getY() == 3 && this->player.getX() == 5 && this->player.getLvl() <= 9)))
+				cout << "Nie mozesz tam wejsc!" << endl;
+			else {
+				isGood = false;
+				this->map[this->player.getX()][this->player.getY()] = 'X';
+				this->player.travel(3);
+				this->map[this->player.getX()][this->player.getY()] = '@';
+			}
+			break;
+		case '4': //Dó³
+			if (this->player.getX() == 6
+				|| (this->player.getY() >= 1 && this->player.getY() <= 5 && this->player.getX() == 5)
+				|| (this->player.getY() >= 2 && this->player.getY() <= 4 && this->player.getX() == 4))
+				cout << "Nie mozesz tam zejsc!" << endl;
+			else if (((this->player.getY() >= 1 && this->player.getY() <= 5 && this->player.getX() == 0 && this->player.getLvl() <= 4)
+				|| (this->player.getY() >= 2 && this->player.getY() <= 4 && this->player.getX() == 1 && this->player.getLvl() <= 6)
+				|| (this->player.getY() == 3 && this->player.getX() == 2 && this->player.getLvl() <= 9)))
+				cout << "Nie mozesz tam wejsc!" << endl;
+			else {
+				isGood = false;
+				this->map[this->player.getX()][this->player.getY()] = 'X';
+				this->player.travel(4);
+				this->map[this->player.getX()][this->player.getY()] = '@';
+			}
+			break;
+		default:
+			cout << "Nie ma takiej opcji!";
+			Sleep(1500);
+			break;
+		}
+		cout << this->player.getX() << endl << this->player.getY() << endl;
+		this->showBoard();
+		Sleep(2000);
+	}
+}
 void Game::shop() {
 
 }
 
 void Game::board() {
+	string line;
+	int i;
 
-
+	system("cls");
+	ifstream file("text_files/board.txt");
+	if (file.is_open()) {
+		while (!file.eof()) {
+			for (int a = 0; a < 7; a++)
+			{
+				for (int b = 0; b < 7; b++)
+				{
+					file >> i;
+					switch (i) {
+					case 0: //Poziom 1
+						this->map[a][b] = '#';
+						break;
+					case 1: //Poziom 2
+						this->map[a][b] = '%';
+						break;
+					case 2: //Poziom 3
+						this->map[a][b] = '&';
+						break;
+					case 3: //Szczyt
+						this->map[a][b] = '$';
+						break;
+					case 4: //Gracz
+						this->map[a][b] = '@';
+						break;
+					}
+				}
+			}
+		
+		}
+	}
+	else {
+		cout << "Nie mozna otworzyc pliku!" << endl;
+	}
+	file.close();
 }
-
+void Game::showBoard() {
+	cout << endl << endl;
+	cout << setfill(' ') << setw(5);
+	for (int y = 0; y < 7; y++){
+		for (int x = 0; x < 7; x++){
+			cout << this->map[y][x];
+		}
+		cout << setfill(' ') << setw(5);
+		cout << endl;
+	}
+	cout << endl << endl;
+}
 void Game::end() {
 	//czyszczenie danych o graczach
 	ofstream file;

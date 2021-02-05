@@ -7,5 +7,6 @@
 #include <fstream>
 #include <string>
 #include <list>
+#include "DynamicArray.h"
 
 using namespace std;

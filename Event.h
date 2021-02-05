@@ -2,7 +2,6 @@
 
 #include "Includes.h"
 #include "Player.h"
-#include "DynamicArray.h"
 
 class Event{
 private:
@@ -11,8 +10,9 @@ public:
 	Event();
 	virtual~Event();
 
-	void generateEvent(Player& player, DynamicArray<Enemy>& enemies);
-	void enemyEncounter(Player& player, DynamicArray<Enemy>& enemies);
+	void generateEvent(Player& player);
+	void enemyEncounter(Player& player);
 	void getCurse(Player& player);
+	void escape(Player& player, Enemy& enemy, bool &escaped, bool &playerDefeted);
 };
 

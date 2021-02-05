@@ -1,18 +1,18 @@
 #include "Event.h"
 
 Event::Event() {
-	this->nrOfEvents = 2;
+	this->nrOfEvents = 1;
 }
 Event::~Event() {
 
 }
 
-void Event::generateEvent(Player &player, DynamicArray<Enemy>& enemies) {
+void Event::generateEvent(Player &player) {
 	int i = rand() % this->nrOfEvents;
 	switch (i) {
 	case 0:
 		//Natrafienie na wroga
-		enemyEncounter(player, enemies);
+		enemyEncounter(player);
 		break;
 	case 1:
 		//Kl¹twa
@@ -21,27 +21,30 @@ void Event::generateEvent(Player &player, DynamicArray<Enemy>& enemies) {
 	case 2:
 		//Skarb
 		break;
-
 	}
 }
 
-void Event::enemyEncounter(Player &player, DynamicArray<Enemy>& enemies) {
+void Event::enemyEncounter(Player &player) {
+	int enemiesStrength = 0;
 	char command;
 	string input;
-	bool escape = false;
+
+	//Losowanie rodzaju przeciwnika
+	int idx = rand() % 4;
+	Enemy enemy(idx);
+
+	//Warunki zakoñczenia walki
+	bool escaped = false;
 	bool playerDefeted = false;
 	bool enemiesDefeted = false;
 
-	int nrOfEnemies = rand() % 3 + 1;
-	for (int i = 0; i < nrOfEnemies; i++)
-	{
-		int idx = rand() % 4;
-		enemies.push(Enemy(idx));
-	}
-	
-	while (!escape && !enemiesDefeted && !playerDefeted) {
+
+	//Przebieg walki
+	while (!escaped && !enemiesDefeted && !playerDefeted) {
 		//Menu
 		readFile("menuBattle.txt");
+		enemy.getStats();
+		cout << endl;
 		cout << "= ";
 		cin >> input;
 		if (input.size() > 1) {
@@ -54,11 +57,18 @@ void Event::enemyEncounter(Player &player, DynamicArray<Enemy>& enemies) {
 		command = input[0];
 		cin.ignore(1000, '\n');
 		switch (command) {
-		case '1': //Ucieczka
-
+		case '1': //Ucieczka, czyli rzut koœci¹ + szczêœcie postaci
+				escape(player, enemy, escaped, playerDefeted);
 			break;
 		case '2': //Atak
-
+			//Sprawdzenie si³y obu stron
+			if (enemy.getStrength() >= player.getStrength()) {
+				playerDefeted = true;
+			}
+			//Wygrana gracza
+			else {
+				enemiesDefeted = true;
+			}
 			break;
 		case '3': //U¿ycie przedmiotu
 			
@@ -73,18 +83,62 @@ void Event::enemyEncounter(Player &player, DynamicArray<Enemy>& enemies) {
 			Sleep(1000);
 
 		}
-		//conditions
-		//if (!player.isAlive()) {
-		//	playerDefeted = true;
-		//}
-		//else if (enemies.size()) {
-		//	enemiesDefeted = true;
-		//}
+	}
+	//Jeœli ciê pokonali (lub nie uda³o ci siê uciec) to przyjmujesz karê i tracisz poziom
+	if (playerDefeted) {
+		cout << endl << "Przegrales!" << endl;
+		if (player.getLvl() > 1) {
+			cout << "Tracisz poziom!" << endl;
+			player.levelDown();
+		}
+	}
+	else if (escaped) {
+		cout << "Uciekasz!" << endl;
+	}
+	else {
+		cout << "Pokonales wroga!" << endl 
+			<< "Zyskujesz poziom!" << endl;
+		player.levelUp();
+		//Losowanie przedmiotow i ich iloœci
+		int rollNr = rand() % 2 + 1;
+		int roll = rand() % 100;
+		for (int i = 0; i < rollNr; i++){
+			if (roll > 0 && roll <= 45) {
+				Weapon tempW(1);
+				player.addItem(tempW);
+				cout << "Zdobywasz bron!" << endl;
+			}
+			else if (roll > 45 && roll <= 90) {
+				Armor tempA(1);
+				player.addItem(tempA);
+				cout << "Zdobywasz zbroje!" << endl;
+			}
+			else {
+				player.levelUp();
+				cout << "Zdobywasz skarb: DODATKOWY POZIOM!" << endl;
+			}
+		}
+		
+	}
+	cout << "Wpisz cokolwiek i wcisnij Enter, by kontynuowac..." << endl;
+	cin.get();
+	cin.ignore();
+
+}
+void Event::escape(Player& player, Enemy& enemy, bool& escaped, bool& playerDefeted) {
+	int diceToss;
+	diceToss = (rand() % 6 + 1) + player.getLuck();
+	if (diceToss >= 5) {
+		cout << "Udalo ci sie zwiac!" << endl;
+		escaped = true;
+	}
+	else {
+		cout << "Nie udalo ci sie uciec!" << endl;
+		playerDefeted = true;
 	}
 }
-
 void Event::getCurse(Player &player){
-	int i = rand() % 3;
+	int i = rand() % 2;
 	switch (i) {
 	case 0:
 		cout << "Kl¹twa! Tracisz poziom." << endl;
@@ -94,10 +148,7 @@ void Event::getCurse(Player &player){
 		cout << "Kl¹twa! Zmieniasz p³eæ." << endl;
 		player.changeSex();
 		break;
-	case 2:
-
-		break;
-
 	}
+	Sleep(1500);
 	
 }

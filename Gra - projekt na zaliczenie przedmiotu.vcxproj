@@ -170,10 +170,10 @@
     <Text Include="pliki_tekstowe\menu.txt" />
     <Text Include="pliki_tekstowe\menuInGame.txt" />
     <Text Include="pliki_tekstowe\menuInventory.txt" />
-    <Text Include="pliki_tekstowe\mobs.txt" />
     <Text Include="pliki_tekstowe\players.txt" />
     <Text Include="pliki_tekstowe\Items.txt" />
     <Text Include="text files\menuBattle.txt" />
+    <Text Include="text_files\mobs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
