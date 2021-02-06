@@ -1,10 +1,11 @@
-==========================
-= Witaj w grze Rouglike! =
-=			 =
-= Co chcesz zrobic?	 =
-= Wybierz jedna z opcji: =
-= 1. Rozpocznij gre.	 =
-= 2. Informacje o grze.	 =
-= 3. Na czym polega gra? =
-= 4. Wyjscie z gry.	 =
-==========================
+=================================
+= 	Witaj w grze		=
+=  King Of The Targor Mountain! =
+=			 	=
+= Co chcesz zrobic?	 	=
+= Wybierz jedna z opcji: 	=
+= 1. Rozpocznij gre.	 	=
+= 2. Informacje o grze.	 	=
+= 3. Na czym polega gra?	=
+= 4. Wyjscie z gry.	 	=
+=================================

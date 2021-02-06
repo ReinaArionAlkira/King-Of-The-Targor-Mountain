@@ -5,9 +5,9 @@
   GlobalFunctions.cpp
   Inventory.cpp
   Item.cpp
+  main.cpp
   Player.cpp
 C:\Users\A49\source\repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\Player.cpp(65,25): warning C4018: ">=": niezgodność typu ze znakiem/bez znaku
   Weapon.cpp
-  main.cpp
   Generowanie kodu...
   Gra - projekt na zaliczenie przedmiotu.vcxproj -> C:\Users\A49\Source\Repos\ReinaArionAlkira\King-Of-The-Targor-Mountain\x64\Debug\Gra - projekt na zaliczenie przedmiotu.exe

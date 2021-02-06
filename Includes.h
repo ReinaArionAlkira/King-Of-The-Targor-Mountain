@@ -1,10 +1,9 @@
 #pragma once
 
-#include <windows.h> //system("cls") sleep()
-#include <conio.h>	 //rand()
+#include <windows.h> //system("cls") sleep() rand()
 #include <iomanip>   //set(w) setfill()
 #include <iostream>
 #include <fstream>   //operacje na plikach
-#include <string>    //stringi
+#include <string>    //operacje na stringach
 
 using namespace std;
